@@ -2,8 +2,6 @@
   <img src="banner.svg" width="100%" alt="Darkroom"/>
 </p>
 
-<br/>
-
 Electrical engineering and information technology student exploring cybersecurity and systems programming.
 
 I like a good triangle. Currently building things that don't exist yet.

@@ -1,48 +1,79 @@
-<svg width="900" height="300" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0a0a"/>
-      <stop offset="100%" style="stop-color:#141414"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#333"/>
-      <stop offset="100%" style="stop-color:#555"/>
-    </linearGradient>
-    <linearGradient id="tri" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#e0e0e0;stop-opacity:0.08"/>
-      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:0.02"/>
-    </linearGradient>
-    <linearGradient id="tri2" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.05"/>
-      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.01"/>
-    </linearGradient>
-  </defs>
+<svg width="800" height="220" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes draw-outer {
+      0% { stroke-dashoffset: 520; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes draw-inner {
+      0% { stroke-dashoffset: 260; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes reveal {
+      0% { width: 0; }
+      100% { width: 500px; }
+    }
+    @keyframes fade-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .outer-tri {
+      stroke-dasharray: 520;
+      stroke-dashoffset: 520;
+      animation: draw-outer 2s ease-out 0.3s forwards;
+    }
+    .inner-tri {
+      stroke-dasharray: 260;
+      stroke-dashoffset: 260;
+      animation: draw-inner 1.5s ease-out 1.2s forwards;
+    }
+    .name-mask rect {
+      animation: reveal 1.8s steps(20) 0.8s forwards;
+    }
+    .tagline {
+      opacity: 0;
+      animation: fade-in 1s ease 2.8s forwards;
+    }
+    .cursor {
+      animation: blink 0.8s step-end 0.8s 6;
+    }
+  </style>
 
   <!-- Background -->
-  <rect width="900" height="300" fill="url(#bg)"/>
+  <rect width="800" height="220" rx="6" fill="#161b22"/>
 
-  <!-- Subtle grid lines -->
-  <line x1="0" y1="100" x2="900" y2="100" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
-  <line x1="0" y1="200" x2="900" y2="200" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
-  <line x1="300" y1="0" x2="300" y2="300" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
-  <line x1="600" y1="0" x2="600" y2="300" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+  <!-- Outer triangle -->
+  <polygon points="90,185 90,35 170,185"
+    fill="none" stroke="#7d8590" stroke-width="1.5"
+    class="outer-tri"/>
 
-  <!-- Triangle motifs - scattered, geometric -->
-  <polygon points="780,40 820,110 740,110" fill="url(#tri)" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
-  <polygon points="830,80 860,140 800,140" fill="url(#tri2)" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
-  <polygon points="100,220 140,280 60,280" fill="url(#tri)" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
-  <polygon points="680,200 720,260 640,260" fill="url(#tri2)" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
-  <polygon points="850,220 870,260 830,260" fill="url(#tri)" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+  <!-- Inner triangle -->
+  <polygon points="110,185 130,75 150,185"
+    fill="none" stroke="#7d8590" stroke-width="1"
+    class="inner-tri"/>
 
-  <!-- Accent line -->
-  <rect x="80" y="145" width="60" height="2" fill="url(#accent)" rx="1"/>
+  <!-- Name text with reveal mask -->
+  <defs>
+    <clipPath id="name-clip" class="name-mask">
+      <rect x="210" y="70" width="0" height="60"/>
+    </clipPath>
+  </defs>
 
-  <!-- Name -->
-  <text x="80" y="130" font-family="'SF Pro Display', 'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="48" font-weight="600" fill="#e8e8e8" letter-spacing="-1">Darkroom</text>
+  <text x="210" y="120" font-family="'SF Mono', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace"
+    font-size="52" font-weight="600" fill="#e6edf3" letter-spacing="-1"
+    clip-path="url(#name-clip)">Darkroom</text>
+
+  <!-- Typing cursor -->
+  <rect x="210" y="85" width="3" height="40" fill="#e6edf3" class="cursor"/>
 
   <!-- Tagline -->
-  <text x="80" y="180" font-family="'SF Mono', 'JetBrains Mono', 'Fira Code', monospace" font-size="15" fill="#666" letter-spacing="0.5">Security Research  /  Systems Engineering</text>
+  <text x="212" y="160" font-family="'SF Mono', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace"
+    font-size="14" fill="#7d8590" letter-spacing="0.5" class="tagline">security research  /  systems engineering</text>
 
-  <!-- Bottom border accent -->
-  <rect x="0" y="297" width="900" height="3" fill="#222"/>
+  <!-- Subtle bottom line -->
+  <line x1="210" y1="170" x2="560" y2="170" stroke="#30363d" stroke-width="1" class="tagline"/>
 </svg>
