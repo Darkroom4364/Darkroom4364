@@ -1,0 +1,48 @@
+<svg width="900" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#141414"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#333"/>
+      <stop offset="100%" style="stop-color:#555"/>
+    </linearGradient>
+    <linearGradient id="tri" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0e0e0;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:0.02"/>
+    </linearGradient>
+    <linearGradient id="tri2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.05"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.01"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="300" fill="url(#bg)"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="100" x2="900" y2="100" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+  <line x1="0" y1="200" x2="900" y2="200" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+  <line x1="300" y1="0" x2="300" y2="300" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="300" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+
+  <!-- Triangle motifs - scattered, geometric -->
+  <polygon points="780,40 820,110 740,110" fill="url(#tri)" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+  <polygon points="830,80 860,140 800,140" fill="url(#tri2)" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+  <polygon points="100,220 140,280 60,280" fill="url(#tri)" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+  <polygon points="680,200 720,260 640,260" fill="url(#tri2)" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+  <polygon points="850,220 870,260 830,260" fill="url(#tri)" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+
+  <!-- Accent line -->
+  <rect x="80" y="145" width="60" height="2" fill="url(#accent)" rx="1"/>
+
+  <!-- Name -->
+  <text x="80" y="130" font-family="'SF Pro Display', 'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="48" font-weight="600" fill="#e8e8e8" letter-spacing="-1">Darkroom</text>
+
+  <!-- Tagline -->
+  <text x="80" y="180" font-family="'SF Mono', 'JetBrains Mono', 'Fira Code', monospace" font-size="15" fill="#666" letter-spacing="0.5">Security Research  /  Systems Engineering</text>
+
+  <!-- Bottom border accent -->
+  <rect x="0" y="297" width="900" height="3" fill="#222"/>
+</svg>
