@@ -1,59 +1,79 @@
-<svg width="800" height="220" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
   <style>
     @keyframes draw-outer {
-      0% { stroke-dashoffset: 520; }
+      0% { stroke-dashoffset: 440; }
       100% { stroke-dashoffset: 0; }
     }
     @keyframes draw-inner {
-      0% { stroke-dashoffset: 260; }
+      0% { stroke-dashoffset: 220; }
       100% { stroke-dashoffset: 0; }
     }
-    @keyframes reveal {
+    @keyframes reveal-name {
       0% { width: 0; }
-      100% { width: 500px; }
+      100% { width: 365px; }
     }
-    @keyframes fade-in {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+    @keyframes cursor-move-name {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(363px); }
+    }
+    @keyframes reveal-tagline {
+      0% { width: 0; }
+      100% { width: 232px; }
+    }
+    @keyframes cursor-move-tagline {
+      0% { transform: translate(0, 55px); }
+      100% { transform: translate(231px, 55px); }
     }
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
+    @keyframes cursor-phase1 {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    @keyframes cursor-hide {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    @keyframes cursor-show {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
 
     .outer-tri {
-      stroke-dasharray: 520;
-      stroke-dashoffset: 520;
+      stroke-dasharray: 440;
+      stroke-dashoffset: 440;
       animation: draw-outer 2s ease-out 0.3s forwards;
     }
     .inner-tri {
-      stroke-dasharray: 260;
-      stroke-dashoffset: 260;
+      stroke-dasharray: 220;
+      stroke-dashoffset: 220;
       animation: draw-inner 1.5s ease-out 1.2s forwards;
     }
     .name-mask rect {
-      animation: reveal 1.8s steps(20) 0.8s forwards;
+      animation: reveal-name 1.8s steps(12) 0.8s forwards;
     }
-    .tagline {
+    .tagline-mask rect {
+      animation: reveal-tagline 3.5s steps(26) 3s forwards;
+    }
+    .cursor-name {
+      animation: cursor-move-name 1.8s steps(12) 0.8s forwards, blink 0.8s step-end 0.8s 4, cursor-hide 0.01s ease 2.8s forwards;
+    }
+    .cursor-tagline {
       opacity: 0;
-      animation: fade-in 1s ease 2.8s forwards;
-    }
-    .cursor {
-      animation: blink 0.8s step-end 0.8s 6;
+      animation: cursor-show 0.01s ease 3s forwards, cursor-move-tagline 3.5s steps(26) 3s forwards, blink 1.4s step-end 3s 5;
     }
   </style>
 
-  <!-- Background -->
-  <rect width="800" height="220" rx="6" fill="#161b22"/>
-
   <!-- Outer triangle -->
-  <polygon points="90,185 90,35 170,185"
-    fill="none" stroke="#7d8590" stroke-width="1.5"
+  <polygon points="80,170 80,30 155,170"
+    fill="none" stroke="#7d8590" stroke-width="1.5" stroke-linejoin="round"
     class="outer-tri"/>
 
   <!-- Inner triangle -->
-  <polygon points="110,185 130,75 150,185"
-    fill="none" stroke="#7d8590" stroke-width="1"
+  <polygon points="98,170 118,70 138,170"
+    fill="none" stroke="#7d8590" stroke-width="1" stroke-linejoin="round"
     class="inner-tri"/>
 
   <!-- Name text with reveal mask -->
@@ -61,19 +81,23 @@
     <clipPath id="name-clip" class="name-mask">
       <rect x="210" y="70" width="0" height="60"/>
     </clipPath>
+    <clipPath id="tagline-clip" class="tagline-mask">
+      <rect x="210" y="125" width="0" height="30"/>
+    </clipPath>
   </defs>
 
   <text x="210" y="120" font-family="'SF Mono', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace"
     font-size="52" font-weight="600" fill="#e6edf3" letter-spacing="-1"
-    clip-path="url(#name-clip)">Darkroom</text>
+    clip-path="url(#name-clip)">Darkroom4364</text>
 
-  <!-- Typing cursor -->
-  <rect x="210" y="85" width="3" height="40" fill="#e6edf3" class="cursor"/>
+  <!-- Tagline typed after name -->
+  <text x="212" y="152" font-family="'SF Mono', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace"
+    font-size="14" fill="#7d8590" letter-spacing="0.5"
+    clip-path="url(#tagline-clip)">i enjoy a good triangle...</text>
 
-  <!-- Tagline -->
-  <text x="212" y="160" font-family="'SF Mono', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace"
-    font-size="14" fill="#7d8590" letter-spacing="0.5" class="tagline">security research  /  systems engineering</text>
+  <!-- Name cursor -->
+  <rect x="210" y="78" width="3" height="48" fill="#e6edf3" class="cursor-name"/>
 
-  <!-- Subtle bottom line -->
-  <line x1="210" y1="170" x2="560" y2="170" stroke="#30363d" stroke-width="1" class="tagline"/>
+  <!-- Tagline cursor -->
+  <rect x="210" y="78" width="2" height="20" fill="#7d8590" class="cursor-tagline"/>
 </svg>
