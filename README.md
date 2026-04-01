@@ -9,9 +9,6 @@ Electrical engineering and information technology student exploring cybersecurit
 <p align="center">
 Open Source the World  
 </p>
-<p align="center">
-  <sub>More is brewing in private repositories.</sub>
-</p>
 
 ###
 
@@ -50,3 +47,7 @@ Open Source the World
 </div>
 
 ###
+
+<p align="center">
+  <sub>More is brewing in private repositories.</sub>
+</p>
