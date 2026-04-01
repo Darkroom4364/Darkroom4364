@@ -40,14 +40,6 @@ Open Source the World
   <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Darkroom4364/Darkroom4364/output/pacman-contribution-graph.svg">
 </picture>
 
-###
-
-<div align="center">
-  <img height="200" src="240815616-7b282ec6-fcc3-4600-90a7-2c3140549f58.gif"  />
-</div>
-
-###
-
 <p align="center">
   <sub>More is brewing in private repositories.</sub>
 </p>
