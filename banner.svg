@@ -1,11 +1,11 @@
 <svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
   <style>
     @keyframes draw-outer {
-      0% { stroke-dashoffset: 440; }
+      0% { stroke-dashoffset: 374; }
       100% { stroke-dashoffset: 0; }
     }
     @keyframes draw-inner {
-      0% { stroke-dashoffset: 220; }
+      0% { stroke-dashoffset: 244; }
       100% { stroke-dashoffset: 0; }
     }
     @keyframes reveal-name {
@@ -42,13 +42,13 @@
     }
 
     .outer-tri {
-      stroke-dasharray: 440;
-      stroke-dashoffset: 440;
+      stroke-dasharray: 374;
+      stroke-dashoffset: 374;
       animation: draw-outer 2s ease-out 0.3s forwards;
     }
     .inner-tri {
-      stroke-dasharray: 220;
-      stroke-dashoffset: 220;
+      stroke-dasharray: 244;
+      stroke-dashoffset: 244;
       animation: draw-inner 1.5s ease-out 1.2s forwards;
     }
     .name-mask rect {
@@ -62,17 +62,17 @@
     }
     .cursor-tagline {
       opacity: 0;
-      animation: cursor-show 0.01s ease 3s forwards, cursor-move-tagline 3.5s steps(26) 3s forwards, blink 1.4s step-end 3s 5;
+      animation: cursor-show 0.01s ease 3s forwards, cursor-move-tagline 3.5s steps(26) 3s forwards, blink 1.4s step-end 3s 5, cursor-hide 0.01s ease 8s forwards;
     }
   </style>
 
-  <!-- Outer triangle -->
-  <polygon points="80,170 80,30 155,170"
+  <!-- Outer triangle: draws bottom-left up, across to right, down to close -->
+  <path d="M80,170 L80,30 L155,170 Z"
     fill="none" stroke="#7d8590" stroke-width="1.5" stroke-linejoin="round"
     class="outer-tri"/>
 
-  <!-- Inner triangle -->
-  <polygon points="98,170 118,70 138,170"
+  <!-- Inner triangle: draws bottom-left up, across to right, down to close -->
+  <path d="M98,170 L118,70 L138,170 Z"
     fill="none" stroke="#7d8590" stroke-width="1" stroke-linejoin="round"
     class="inner-tri"/>
 
