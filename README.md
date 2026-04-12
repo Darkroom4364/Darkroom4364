@@ -2,10 +2,6 @@
 Electrical engineering and information technology student exploring cybersecurity and systems programming.
 </p>
 
-<p align="center">
-Open Source the World  
-</p>
-
 ###
 
 <div align="center">
