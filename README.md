@@ -1,4 +1,4 @@
-![]([https://github.com/Your_Repository_Name/Y](https://github.com/Darkroom4364/Darkroom4364/darkroomintro.gif)
+![](https://github.com/Darkroom4364/Darkroom4364/darkroomintro.gif)
 
 <p align="center">
 Electrical engineering and information technology student exploring cybersecurity and systems programming.
