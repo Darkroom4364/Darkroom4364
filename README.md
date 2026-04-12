@@ -1,8 +1,4 @@
 <p align="center">
-  <img src="banner.svg" width="100%" alt="Darkroom"/>
-</p>
-
-<p align="center">
 Electrical engineering and information technology student exploring cybersecurity and systems programming.
 </p>
 
