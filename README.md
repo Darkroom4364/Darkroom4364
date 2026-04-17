@@ -25,6 +25,10 @@
   ~$ cat links.md
 
   LinkedIn ··· linkedin.com/in/roman-peneder
+
+  ~$ cat username.md
+
+  Why Darkroom? That name came from a time when I was grinding LeetCode...
   ```
 
   </td></tr>
