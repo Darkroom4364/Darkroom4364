@@ -11,7 +11,7 @@
 
   ~$ cat about.md
 
-  BSc EE/IT @ ETH Zurich · Systems security, networking, and AI.
+  BSc EE/IT @ ETH Zurich · Systems security, networking, and AI/ML.
   Building with Go and Rust from Switzerland.
 
   ~$ ls projects/
