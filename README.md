@@ -3,7 +3,8 @@
   <table>
   <tr><td>
 
-  ⚫ ⚫ ⚫ &nbsp; &nbsp; 📁 ~/
+
+  🔴 🟡 🟢 &nbsp; &nbsp; 📁 ~/
   ```zsh
   ~$ whoami
 
